@@ -1,0 +1,17 @@
+{
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "eofline": true,
+    "object-literal-sort-keys": false,
+    "interface-over-type-literal": false,
+    "semicolon": [true, "always"],
+    "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
+  },
+  "linterOptions": {
+    "exclude": [
+      "config/**/*.js",
+      "node_modules/**/*.ts",
+      "coverage/lcov-report/*.js"
+    ]
+  }
+}
