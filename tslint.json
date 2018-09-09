@@ -4,6 +4,7 @@
     "eofline": true,
     "object-literal-sort-keys": false,
     "interface-over-type-literal": false,
+    "jsx-no-lambda": false,
     "semicolon": [true, "always"],
     "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
   },
