@@ -5,7 +5,10 @@ import { EntryRepo, IEntryRepo } from "./repositories/entryRepo";
 type ContentContainerProps = { slug: string, entryRepo?: IEntryRepo };
 type ContentContainerState = { entry?: Entry, entryRepo: IEntryRepo };
 
-export class ContentContainer extends React.Component<ContentContainerProps, ContentContainerState> {
+export class ContentContainer extends React.Component<
+  ContentContainerProps,
+  ContentContainerState
+> {
   public constructor(props: ContentContainerProps) {
     super(props);
     this.state = {

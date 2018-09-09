@@ -10,7 +10,11 @@ ReactDOM.render(
   <Router>
     <>
       <Route exact={true} path="/" component={App} />
-      <Route exact={true} path="/:slug" render={({ match: { params } }) => <ContentContainer slug={params.slug} />} />
+      <Route
+        exact={true}
+        path="/:slug"
+        render={({ match: { params } }) => <ContentContainer slug={params.slug} />}
+      />
     </>
   </Router>,
   document.getElementById('root') as HTMLElement,
