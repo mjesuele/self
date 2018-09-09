@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
 import data, { Entry } from './hardcodedData';
 
 const Entry: React.SFC<{ entry: Entry }> = ({ entry }) => {
@@ -6,7 +7,7 @@ const Entry: React.SFC<{ entry: Entry }> = ({ entry }) => {
     <>
       <b>{entry.date.toString()}</b>
       &mdash;
-      <a href={entry.slug}>{entry.title}</a>
+      <Link to={`/${entry.slug}`}>{entry.title}</Link>
     </>
   );
 };
