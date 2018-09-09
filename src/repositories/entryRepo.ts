@@ -1,4 +1,4 @@
-import hardcodedData, { Entry } from "../hardcodedData";
+import { Entry, hardcodedData } from "../hardcodedData";
 
 export interface IEntryRepo {
   getEntryBySlug(slug: string): Entry | undefined;

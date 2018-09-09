@@ -5,6 +5,7 @@
     "object-literal-sort-keys": false,
     "interface-over-type-literal": false,
     "jsx-no-lambda": false,
+    "no-default-export": true,
     "semicolon": [true, "always"],
     "trailing-comma": [true, {"multiline": "always", "singleline": "never"}]
   },

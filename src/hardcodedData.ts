@@ -27,9 +27,7 @@ export type Data = {
   entries: Entry[],
 };
 
-const data: Data = {
+export const hardcodedData: Data = {
   name: "Matthew Vincent Jesuele",
   entries,
 };
-
-export default data;
