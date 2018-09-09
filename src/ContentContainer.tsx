@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 import { Entry } from "./hardcodedData";
 import { EntryRepo, IEntryRepo } from "./repositories/entryRepo";
 
@@ -36,6 +37,9 @@ export const Content: React.SFC<{ entry: Entry }> = ({ entry }) => {
   const { images, text } = entry.content;
   return (
     <>
+      <header>
+        <Link to="/">Back</Link>
+      </header>
       <h1>{entry.title}</h1>
       {text && <p>{text}</p>}
       {images && images.map(img => <img key={img} src={img} />)}
