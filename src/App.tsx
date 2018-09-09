@@ -2,10 +2,12 @@ import * as React from 'react';
 import { Link } from "react-router-dom";
 import { Entry, hardcodedData } from './hardcodedData';
 
+const dateDisplayOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+
 const Entry: React.SFC<{ entry: Entry }> = ({ entry }) => {
   return (
     <>
-      <b>{entry.date.toString()}</b>
+      <b>{entry.date.toLocaleDateString("en-US", dateDisplayOptions)}</b>
       &mdash;
       <Link to={`/${entry.slug}`}>{entry.title}</Link>
     </>
