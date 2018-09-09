@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Entry } from "./hardcodedData";
 import { EntryRepo, IEntryRepo } from "./repositories/entryRepo";
 
-type ContentContainerProps = { slug: string, entryRepo?: IEntryRepo };
-type ContentContainerState = { entry?: Entry, entryRepo: IEntryRepo };
+type ContentContainerProps = { slug: string; entryRepo?: IEntryRepo };
+type ContentContainerState = { entry?: Entry; entryRepo: IEntryRepo };
 
 export class ContentContainer extends React.Component<
   ContentContainerProps,
