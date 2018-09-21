@@ -58,3 +58,5 @@ export class EntryRepo implements IEntryRepo {
     return this.dataAccess.entries;
   }
 }
+
+export const entryRepo = new EntryRepo();
