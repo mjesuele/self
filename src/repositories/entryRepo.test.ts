@@ -19,6 +19,34 @@ describe("EntryRepo", () => {
     expect(repo.getEntryBySlug("foo")).toHaveProperty("title", "foo");
   });
 
+  it("removes an entry", () => {
+    const repo = subject(testDataAccess());
+    repo.removeEntry("birth");
+
+    expect(repo.getEntryBySlug("birth")).toBeUndefined();
+  });
+
+  it ("updates an entry", () => {
+    const repo = subject(testDataAccess());
+
+    repo.updateEntry("birth", {
+      title: "Left Womb",
+      date: new Date("1988-12-29"),
+      content: {
+        text: "Matt left the womb",
+      },
+    });
+
+    expect(repo.getEntryBySlug("birth")).toBeUndefined();
+
+    const newEntry = repo.getEntryBySlug("left-womb");
+    expect(newEntry).toHaveProperty("title", "Left Womb");
+    // Content text should be updated
+    expect(newEntry).toHaveProperty("content.text", "Matt left the womb");
+    // Content image should be unchanged
+    expect(newEntry).toHaveProperty("content.images.0", "https://loremflickr.com/320/240");
+  });
+
   function testDataAccess(props?: Partial<Data>): Data {
     return {
       name: "Foouser",
