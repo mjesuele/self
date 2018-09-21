@@ -14,7 +14,7 @@ describe("EntryRepo", () => {
 
   it("adds an entry", () => {
     const repo = subject(testDataAccess());
-    repo.addEntry("foo", new Date());
+    repo.addEntry({ title: "foo", date: new Date() });
 
     expect(repo.getEntryBySlug("foo")).toHaveProperty("title", "foo");
   });

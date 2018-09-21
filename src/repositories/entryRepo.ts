@@ -1,8 +1,9 @@
 import slugify from "slugify";
-import { Entry, hardcodedData } from "../hardcodedData";
+import { Content, Entry, hardcodedData } from "../hardcodedData";
 
+export type EntryParams = { title: string, date: Date, content?: Content };
 export interface IEntryRepo {
-  addEntry(title: string, date: Date): boolean;
+  addEntry(params: EntryParams): boolean;
   getEntryBySlug(slug: string): Entry | undefined;
 }
 
@@ -11,8 +12,8 @@ export class EntryRepo implements IEntryRepo {
     private dataAccess = hardcodedData,
   ) {}
 
-  public addEntry(title: string, date: Date) {
-    const slug = slugify(title);
+  public addEntry({ title, date, content = {} }: EntryParams) {
+    const slug = slugify(title).toLowerCase();
     try {
       this.dataAccess.entries = [
         ...this.dataAccess.entries,
@@ -20,7 +21,7 @@ export class EntryRepo implements IEntryRepo {
           title,
           date,
           slug,
-          content: {},
+          content,
         },
       ];
     } catch (e) {
